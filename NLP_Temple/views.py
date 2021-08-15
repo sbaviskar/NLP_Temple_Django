@@ -4,8 +4,8 @@ import nltk
 from nltk.tag import pos_tag
 from nltk.tokenize import sent_tokenize, word_tokenize #
 from nltk.corpus import stopwords 
-from nltk.probability import FreqDist
 from nltk.stem.snowball import SnowballStemmer
+from nltk.stem import WordNetLemmatizer  # used for lemming
 
 
  
@@ -35,3 +35,35 @@ def posTag(request):
     word_token_list= word_tokenize(raw_text)   # Word Tokenization
     pos_tag_list = nltk.pos_tag(word_token_list,lang="eng") # pos_taging
     return render(request,'posTaging.html',{'sen':pos_tag_list})
+
+def lemmatization(request):
+    raw_text = request.GET['allRawText']  
+
+   # Normalize text
+   # NLTK considers capital letters and small letters differently.
+   # For example, Fox and fox are considered as two different words.
+   # Hence, we convert all letters of our text into lowercase.
+    lower_case_raw_text = raw_text.lower()   # Converting text into lowercase
+    words = word_tokenize(lower_case_raw_text)  # tokenize text
+    print (words)
+    lemmatizer = WordNetLemmatizer()  # Loading lemmatizer Module
+    
+    words_lemma = []
+    for word in words:
+	    words_lemma.append(lemmatizer.lemmatize(word))
+    
+    return render(request,'lemmatization.html',{'lemma' : words_lemma})
+
+def stemming(request):
+    raw_text = request.GET['allRawText']        # fetch raw text from user
+    lower_case_raw_text = raw_text.lower()   # Converting text into lowercase
+    word_token_list = nltk.word_tokenize(lower_case_raw_text)       # Word Tokenization
+    
+    
+    snow_stem = SnowballStemmer(language='english')  # Loading Stemmer Module
+    stem_words_list = [] 
+   
+    for w in word_token_list:
+     stem_words_list.append(w+'  >--------->  '+snow_stem.stem(w))
+
+    return render(request,'stemming.html',{'stems':stem_words_list})

@@ -23,5 +23,7 @@ urlpatterns = [
     path('', views.home),
     path('sentSegment/', views.sentSegment , name="SentenceSegmentation"),
     path('wordTokens/', views.wordTokenization , name="wordTokenization"), # posTag
-    path('pos/', views.posTag , name="posTaging"),
+    path('pos/', views.posTag , name="posTaging"), #lemmatization
+    path('lemma/', views.lemmatization , name="lemmatization"),
+    path('stem/',views.stemming , name="stemming"),
 ]
