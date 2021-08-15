@@ -9,11 +9,11 @@
     <form action="{% url 'SentenceSegmentation' %}"> 
         <textarea name="allRawText" id="" cols="100" rows="10"></textarea>
         <br /><br/>
-         <input type="submit" value=" --> "/> 
         <button type="submit" formaction="{% url 'SentenceSegmentation' %}">Sentence Segmentation</button>
         <button type="submit" formaction="{% url 'wordTokenization' %} ">Word Tokenization </button>
-        <button type="submit" formaction="{% url 'posTaging' %}"> POS  </button>
-        <button type="submit" formaction=" ">Steming</button>
+        <button type="submit" formaction="{% url 'posTaging' %}"> POS  tag </button>
+        <button type="submit" formaction=" ">Lemmatization</button>
+        <button type="submit" formaction=" ">Stemming</button>
     </form>
 </div>
 
