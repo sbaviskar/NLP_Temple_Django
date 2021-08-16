@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home, name="Temple"),
     path('sentSegment/', views.sentSegment , name="SentenceSegmentation"),
     path('wordTokens/', views.wordTokenization , name="wordTokenization"), # posTag
     path('pos/', views.posTag , name="posTaging"), #lemmatization
