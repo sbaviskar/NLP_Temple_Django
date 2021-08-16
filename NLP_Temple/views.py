@@ -31,9 +31,9 @@ def wordTokenization(request):              ## function for word_Tokenixation
     return render(request,'wordTokenization.html',{'tokens':word_token_list}) 
 
 def posTag(request):
-    raw_text = request.GET['allRawText']   # fetch raw text from user
-    word_token_list= word_tokenize(raw_text)   # Word Tokenization
-    pos_tag_list = nltk.pos_tag(word_token_list,lang="eng") # pos_taging
+    raw_text = request.GET['allRawText']    # fetch raw text from user
+    word_token_list= word_tokenize(raw_text)    # Word Tokenization
+    pos_tag_list = nltk.pos_tag(word_token_list,lang="eng")     # pos_taging
     return render(request,'posTaging.html',{'sen':pos_tag_list})
 
 def lemmatization(request):
@@ -56,7 +56,7 @@ def lemmatization(request):
 
 def stemming(request):
     raw_text = request.GET['allRawText']        # fetch raw text from user
-    lower_case_raw_text = raw_text.lower()   # Converting text into lowercase
+    lower_case_raw_text = raw_text.lower()      # Converting text into lowercase
     word_token_list = nltk.word_tokenize(lower_case_raw_text)       # Word Tokenization
     
     

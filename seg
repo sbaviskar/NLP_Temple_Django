@@ -1,0 +1,35 @@
+[33mcommit c9b86364637489ee61b95be3c317953063cd7d5d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 21:21:23 2021 +0530
+
+    Stemming feature added
+
+[33mcommit b8497f3533508538793f8b22c98154f7cbc635e9[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 19:23:20 2021 +0530
+
+    Sentence tokenization , Word Tokenization and Part Of Speech(POS) taging feature added
+
+[33mcommit d5e9287399c7951e88f219243d37a02b00ace14a[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 10:40:15 2021 +0530
+
+    Html templates added
+
+[33mcommit a61118913c23af7c0cdf4108216e207d5e8cfb28[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 02:22:16 2021 +0530
+
+    README.md file added
+
+[33mcommit 49222a2f1903a40da0cbee5a44b9577da0a25208[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 01:43:43 2021 +0530
+
+    all Requirment is collected using pip freeze > requirements.txt
+
+[33mcommit df6961e8b06aeabffe84f18a72b7e1df63e68d23[m
+Author: swapnil9baviskar <swapnil.baviskar@hotmail.com>
+Date:   Sun Aug 15 01:31:53 2021 +0530
+
+    initial commit
