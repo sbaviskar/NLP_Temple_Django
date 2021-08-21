@@ -1,8 +1,79 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div>
+    <header style=" border-style: solid; border-width: 2px 10px 4px 20px;">
+        <h1 align=center>Natural Language Processing (NLP) Temple</h1>
+        <b><code style="color: orangered;">Enlighten yourself with natural language processing wisdom.</code></b>
+    </header>
+</div>
+<br />
 <h1>Step 3:POS Taging </h1> <i>Predicting Parts of Speech for Each Token</i>
+<br>
+<b>Note : </b> For Abbreviation and its Meaning , refer table.
 <br/>
-<br><a href="{% url  'Temple' %}" > back to Temple</a></br>
-{% for POS in POS_tags %}
-<li>
-    {{POS}}
-</li>
-{% endfor %}
+<br><a href="{% url  'Temple' %}"> back to Temple</a></br>
+<h3> Original text : </h3>
+ {{ origin }}
+<br>
+<hr style="border-style: dashed ;">
+
+<h3>POS Tag : </h3>
+<div class="caintainer mt-5" style=" margin:1em; float: left;">
+    {% for POS in POS_tags %}
+    <li>
+        {{POS}}
+    </li>
+    {% endfor %}
+</div>
+<div>
+    <table border="1px"> 
+        <thead> <tr> <th>Abbreviation</th> <th>Meaning</th> </tr> </thead>
+         <tbody>
+             <tr><td>CC </td><td>coordinating conjunction </td></tr>
+             <tr><td>CD </td><td>cardinal digit </td></tr>
+             <tr><td>DT </td><td>determiner </td></tr>
+             <tr><td>EX </td><td>existential there </td></tr>
+             <tr><td>FW </td><td>foreign word </td></tr>
+             <tr><td>IN </td><td>preposition/subordinating conjunction </td></tr>
+             <tr><td>JJ </td><td>This NLTK POS Tag is an adjective (large) </td></tr>
+             <tr><td>JJR </td><td>adjective, comparative (larger) </td></tr>
+             <tr><td>JJS </td><td>adjective, superlative (largest) </td></tr>
+             <tr><td>LS </td><td>list market </td></tr>
+             <tr><td>MD </td><td>modal (could, will) </td></tr>
+             <tr><td>NN </td><td>noun, singular (cat, tree) </td></tr>
+             <tr><td>NNS </td><td>noun plural (desks) </td></tr>
+             <tr><td>NNP </td><td>proper noun, singular (sarah) </td></tr>
+             <tr><td>NNPS </td><td>proper noun, plural (indians or americans) </td></tr>
+             <tr><td>PDT </td><td>predeterminer (all, both, half) </td></tr>
+             <tr><td>POS </td><td>possessive ending (parent\ 's) </td></tr>
+             <tr><td>PRP </td><td>personal pronoun (hers, herself, him,himself) </td></tr>
+             <tr><td>PRP$ </td><td>possessive pronoun (her, his, mine, my, our ) </td></tr>
+             <tr><td>RB </td><td>adverb (occasionally, swiftly) </td></tr>
+             <tr><td>RBR </td><td>adverb, comparative (greater) </td></tr>
+             <tr><td>RBS </td><td>adverb, superlative (biggest) </td></tr>
+             <tr><td>RP </td><td>particle (about) </td></tr>
+             <tr><td>TO </td><td>infinite marker (to) </td></tr>
+             <tr><td>UH </td><td>interjection (goodbye) </td></tr>
+             <tr><td>VB </td><td>verb (ask) </td></tr>
+             <tr><td>VBG </td><td>verb gerund (judging) </td></tr>
+             <tr><td>VBD </td><td>verb past tense (pleaded) </td></tr>
+             <tr><td>VBN </td><td>verb past participle (reunified) </td></tr>
+             <tr><td>VBP </td><td>verb, present tense not 3rd person singular(wrap) </td></tr>
+             <tr><td>VBZ </td><td>verb, present tense with 3rd person singular (bases) </td></tr>
+             <tr><td>WDT </td><td>wh-determiner (that, what) </td></tr>
+             <tr><td>WP </td><td>wh- pronoun (who) </td></tr>
+             <tr><td>WRB </td><td>wh- adverb (how) </td></tr>
+            </tbody>
+        </table>
+</div>
+<hr>
+<footer>
+    <h6 align="center">
+        Crafted by <b> => </b> Swapnil
+    </h6>
+</footer>
+

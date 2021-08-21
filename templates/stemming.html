@@ -1,8 +1,26 @@
+<div>
+    <header  style = " border-style: solid; border-width: 2px 10px 4px 20px;">
+        <h1 align = center>Natural Language Processing (NLP) Temple</h1>
+        <b><code style="color: orangered;">Enlighten yourself with natural language processing wisdom.</code></b>
+    </header>
+    </div> 
+    <br/>
 <h1>Stemming</h1><br><a href="{% url  'Temple' %}" > back to Temple</a></br>
-
-
+<h3> Original text : </h3>
+ {{ origin }}
+<br>
+<hr style="border-style: dashed ;">
+<b> words and its stems</b>
+words -------->  stem 
 <ul>
     {% for stem in stems %}
         <li>{{ stem }}</li>
     {% endfor %}    
 </ul>
+
+<hr>
+<footer>
+    <h6 align="center">
+        Crafted by <b> => </b> Swapnil
+    </h6>
+</footer>

@@ -11,29 +11,26 @@ from nltk.stem import WordNetLemmatizer  # used for lemming
 
 
 def home(request):
-    text = "Data data " 
-    sent_token = sent_tokenize(text)
-    word_token = nltk.word_tokenize(text)
-    return render(request,'home.html',{'word_token':word_token}) 
+    return render(request,'home.html') 
 
 
 def sentSegment(request): 
-    raw_text = request.GET['allRawText']             # fetch raw text from user 
+    raw_text = request.GET['allRawText']             ## fetch raw text from user 
     sent_token_list = nltk.sent_tokenize(raw_text)   # Sentence Segmenation A.K.A Sentence tokenization 
-    return render(request,'sentSegmentation.html',{'tokens':sent_token_list}) 
+    return render(request,'sentSegmentation.html',{'tokens':sent_token_list,'origin':raw_text}) 
 
 def wordTokenization(request):                      ## function for word_Tokenixation
     raw_text = request.GET['allRawText']            # fetch raw text from user
     word_token_list = nltk.word_tokenize(raw_text)  # Word Tokenization
     print(type(word_token_list))
     print(type(word_token_list))
-    return render(request,'wordTokenization.html',{'tokens':word_token_list}) 
+    return render(request,'wordTokenization.html',{'tokens':word_token_list,'origin':raw_text}) 
 
 def posTag(request):
-    raw_text = request.GET['allRawText']   # fetch raw text from user
+    raw_text = request.GET['allRawText']       ## fetch raw text from user
     word_token_list= word_tokenize(raw_text)   # Word Tokenization
-    pos_tag_list = nltk.pos_tag(word_token_list,lang="eng",tagset=brown) # pos_taging
-    return render(request,'posTaging.html',{'POS_tags':pos_tag_list})
+    pos_tag_list = nltk.pos_tag(word_token_list,lang="eng") # pos_taging
+    return render(request,'posTaging.html',{'POS_tags':pos_tag_list,'origin':raw_text})
 
 def lemmatization(request):
     raw_text = request.GET['allRawText']  
@@ -65,6 +62,6 @@ def stemming(request):
     stem_words_list = [] 
    
     for w in word_token_list:
-     stem_words_list.append(w+'  >--------->  '+snow_stem.stem(w))
+     stem_words_list.append(w+'  --------->  '+snow_stem.stem(w))
 
-    return render(request,'stemming.html',{'stems':stem_words_list})
+    return render(request,'stemming.html',{'stems':stem_words_list,'origin':raw_text})
