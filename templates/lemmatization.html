@@ -1,3 +1,40 @@
-<h1>Step 4: Text Lemmatization</h1><br><a href="{% url  'Temple' %}" > back to Temple</a></br>
+<h1>Step 4: Text Lemmatization</h1><br><a href="{% url  'Temple' %}"> back to Temple</a></br>
 
+<h3> Original text :  </h3>
 {{ lemma }}
+<br>
+===========================
+<br>
+<h3>  Text After Lemmatization :  </h3>
+{{ origin }}
+
+<br>
+==============
+<br/>
+
+<div style="width: 300px; margin: 10px auto; "align = "center" >
+    <div style=" float:left" ;>
+        <table style="width:auto" ; border="1px">
+            <tr>
+                <th>Words</th>
+            </tr>
+            {% for w in origin %}
+            <tr>
+                <td>{{w}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div style=" float:right" ;>
+        <table style="width:auto "; border="1px">
+            <tr>
+                <th>Lemma</th>
+            </tr>
+            {% for lem in lemma %}
+            <tr>
+                <td>{{ lem}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
