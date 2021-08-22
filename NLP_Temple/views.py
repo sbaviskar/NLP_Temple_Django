@@ -48,7 +48,7 @@ def lemmatization(request):
 	    words_lemma.append(lemmatizer.lemmatize(word ,pos = NOUN))
     
     print(words_lemma)
-    return render(request,'lemmatization.html',{'lemma' : words_lemma,'origin':words})
+    return render(request,'lemmatization.html',{'lemma' : words_lemma,'origin':raw_text,'words':words})
 
 
 
